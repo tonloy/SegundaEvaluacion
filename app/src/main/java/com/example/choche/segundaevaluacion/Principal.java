@@ -32,9 +32,9 @@ public class Principal extends AppCompatActivity {
     private ArrayList<imagen> lstImagenes;
     private AdaptadorImagen adaptadorImagen;
     private ListView lista;
-    private Animation zoom_in,zoom_out;
 
-    Boolean   es_zoomIN;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +52,6 @@ public class Principal extends AppCompatActivity {
         adaptadorImagen=new AdaptadorImagen(this,lstImagenes);
         lista=findViewById(R.id.lstImagenes);
 
-        zoom_in= AnimationUtils.loadAnimation(this,R.anim.zoom_in);
-        zoom_out=AnimationUtils.loadAnimation(this,R.anim.zoom_out);
-
-        es_zoomIN  = true;
-
         lista.setAdapter(adaptadorImagen);
 
         btnAgregar.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +60,7 @@ public class Principal extends AppCompatActivity {
                 pickImage();
             }
         });
-        
+
     }
 
         public void pickImage() {
